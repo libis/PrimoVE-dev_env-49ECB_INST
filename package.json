@@ -58,5 +58,5 @@
     "angular": "1.8.2",
     "yarn": "^1.22.15"
   },
-  "description": "This is a Primo 'CUSTOM_VIEW' package for RZS"
+  "description": "This is a Primo 'CUSTOM_VIEW' package"
 }

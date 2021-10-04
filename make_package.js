@@ -39,18 +39,45 @@ function copyResources(resource) {
     let resourceDir = Package.primo.build.resources;
     let distDir = Package.primo.build.dist;
     try {
-        console.log("\tCopying resources");
+        console.log("\tCopying resources html");
         ['general', resource].forEach(dir => {
-            let files = glob.sync(`${resourceDir}/${dir}`);
+
+            let files = glob.sync(`${resourceDir}/${dir}/html`);
                 files.forEach(file => {                    
-                    FS.copySync(file, `tmpPackage/${resource}/`, { overwrite: true })
+                    FS.copySync(file, `tmpPackage/${resource}/html`, { overwrite: true })
+                })            
+        });
+        console.log("\tCopying resources img");
+        ['general', resource].forEach(dir => {
+
+            let files = glob.sync(`${resourceDir}/${dir}/img`);
+                files.forEach(file => {                    
+                    FS.copySync(file, `tmpPackage/${resource}/img`, { overwrite: true })
                 })            
         });
 
-        let files = glob.sync(`${distDir}/*/`);
+
+        console.log("\tCopying "+distDir+" html");
+        var files = glob.sync(`${distDir}/${resource}/html`);
             files.forEach(file => {                    
-                FS.copySync(file, `tmpPackage/${resource}/`, { overwrite: true })
+                FS.copySync(file, `tmpPackage/${resource}/html/`, { overwrite: true })
             });                
+        console.log("\tCopying "+distDir+" img");
+        var files = glob.sync(`${distDir}/${resource}/img`);
+            files.forEach(file => {                    
+                FS.copySync(file, `tmpPackage/${resource}/img/`, { overwrite: true })
+            });   
+        console.log("\tCopying "+distDir+"/css/custom1.css");
+        var files = glob.sync(`${distDir}/${resource}/css/custom1.css`);
+            files.forEach(file => {                    
+                FS.copySync(file, `tmpPackage/${resource}/css/custom1.css`, { overwrite: true })
+            });   
+        console.log("\tCopying "+distDir+"/js/custom.js");
+        var files = glob.sync(`${distDir}/${resource}/js/custom.js`);
+            files.forEach(file => {                    
+                FS.copySync(file, `tmpPackage/${resource}/js/custom.js`, { overwrite: true })
+            });   
+
     } catch (err) {
         console.error(err);
     }
