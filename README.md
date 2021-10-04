@@ -66,7 +66,7 @@ If you update them then next time you run ```yarn start``` it will point to a ne
 
 ## (de)Activating components
 The index.js in the componets direcory always contains
-
+```
 export let <name>Component = {
   name: 'custom-<name>',  
   enabled: false,
@@ -80,7 +80,7 @@ export let <name>Component = {
     template: <name>HTML
   }
 }
-
+```
 ## Institutional or View specific variables are defined with ui.customization in Alma
 => Alma => Discovery => Display Configuration => Labels => View Labels
 
