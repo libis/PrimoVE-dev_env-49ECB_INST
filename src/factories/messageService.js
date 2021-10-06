@@ -63,7 +63,7 @@ export default class MessageService {
       } else {
         console.log('No message to display');
       }
-    }, 2000);
+    }, 10000);
   }
 
 }
