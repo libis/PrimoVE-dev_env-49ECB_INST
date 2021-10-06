@@ -46,6 +46,7 @@ import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests';
       ]);
     })
     .service('MessageService', MessageService)
+    .constant('reportAProblemURL', 'https://services.libis.be/report_a_problem')
     .run(($translate, $rootScope, angularLoad) => {
       angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
         console.log('Altmetric script loaded');

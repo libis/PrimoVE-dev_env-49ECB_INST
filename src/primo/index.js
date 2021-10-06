@@ -12,8 +12,11 @@ export default class Primo {
         return `Library:${_version} - ALMA:${window.appConfig['system-configuration'].Alma_Version}`;
     }
 
-    get user() {      
-        return User;
+    get user() {  
+        return new Promise((resolve, reject) => {
+            resolve(new User());
+        })  
+        // return User;
     }
 
     get view() {
