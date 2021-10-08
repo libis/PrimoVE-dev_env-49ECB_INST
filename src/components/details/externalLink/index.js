@@ -38,12 +38,12 @@ class ExternalLinksInDetailsController {
 
 
     waitForPNX() {
-        let unbindWatcher = self.$scope.$watch(() =>
+        let detailsWatcher = self.$scope.$watch(() =>
             self.parentCtrl.details,
             (newVal, oldVal) => {
                 if (newVal) {
                    if (newVal[0]) {
-                        unbindWatcher();
+                        detailsWatcher();
                         this.createExternalLinks()
                     }
                 }

@@ -23,11 +23,11 @@ class RemoveDescForDbController {
 
 
     waitForPNX() {
-        let unbindWatcher = self.$scope.$watch(() =>
+        let detailsWatcher = self.$scope.$watch(() =>
             self.parentCtrl.details,
             (newVal, oldVal) => {
                 if (newVal[0]) {
-                    unbindWatcher();
+                    detailsWatcher();
                     this.removeDescriptionIfDb()
                 }
             }
