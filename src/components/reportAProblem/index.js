@@ -52,7 +52,7 @@ class ReportAProblemController {
                     onCampus: self.user.isOnCampus(),
                     user: self.user.name,
                     fe: '',
-                    ip: self.view.ip.address,
+                    ip: self.view.ip,
                     message: $scope.report.message,
                     replyTo: $scope.report.replyTo || self.user.email,
                     userAgent: navigator.userAgent

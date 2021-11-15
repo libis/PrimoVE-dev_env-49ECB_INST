@@ -21,7 +21,7 @@ export default class User {
             email: session.email || '',
             name: jwt.userName || 'Guest',
             display_name: session.display_name,
-            isLoggedIn: () => session.isLoggedIn,
+            isLoggedIn: () => {return session.isLoggedIn()},
             isOnCampus: () => jwt.onCampus == "true" ? true : false,
             fines: fines,
             loans: loans
