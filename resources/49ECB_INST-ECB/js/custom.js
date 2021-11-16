@@ -150,3 +150,8 @@ app.controller('prmVirtualBrowseItemAfter', ['$element', function ($element) {
     $element.parent().parent().attr("target", "_blank");
 }]);
 })();
+
+
+
+
+

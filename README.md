@@ -85,3 +85,6 @@ export let <name>Component = {
 => Alma => Discovery => Display Configuration => Labels => View Labels
 
 example (browzine)
+## CSS 
+css => Also add new css to css/index.css with @import './css/<...>'
+
