@@ -269,6 +269,14 @@ html, body {
         box-shadow: none;
     }
 
+    [aria-label="Request"]{
+        background: #0053a0;
+        color: white !important;
+        text-transform: uppercase !important;
+        font-size: 0.8rem !important;
+        padding: 0.5rem !important;
+    }
+
 
 /* DIT ZIT IN DE CENTRALE PACKAGE ???????? */
     div#footer {
