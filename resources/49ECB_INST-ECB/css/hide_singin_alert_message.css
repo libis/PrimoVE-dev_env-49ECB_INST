@@ -1,0 +1,4 @@
+/*CSS to Hide Sign-In Sign-Out Button/link in the alert message */
+prm-alert-bar prm-authentication {
+    display:none;
+}
