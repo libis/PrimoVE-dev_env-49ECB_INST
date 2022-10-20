@@ -1,13 +1,17 @@
 class RemoveDescForDbController {
     constructor($scope) {
-        self = this
         this.$scope = $scope;
-        this.parentCtrl = this.parentCtrl.parentCtrl;
+    }
+
+    $onInit() {
+        let self = this;
+        self.parentCtrl = this.parentCtrl.parentCtrl;
         this.waitForPNX()
     }
 
 
     removeDescriptionIfDb() {
+        let self = this;
         if (self.parentCtrl.item.pnx.display.type.includes("database")) {
 
             for (var d in self.parentCtrl.details) {
@@ -18,20 +22,18 @@ class RemoveDescForDbController {
                 }
             }
         }
-
     }
 
-
     waitForPNX() {
-        let detailsWatcher = self.$scope.$watch(() =>
-            self.parentCtrl.details,
-            (newVal, oldVal) => {
-                if (newVal[0]) {
-                    detailsWatcher();
-                    this.removeDescriptionIfDb()
-                }
+        let self = this;
+        let detailsWatcher =  self.$scope.$watch(() => {
+            return ((typeof self.parentCtrl.details != "undefined") );
+        }, (n, o) => {
+            if (n == true) {
+                detailsWatcher();
+                this.removeDescriptionIfDb()
             }
-        );
+        });
     }
 }
 

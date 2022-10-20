@@ -1,15 +1,12 @@
 class RemoveFinesController {
-  constructor($scope, $compile) {
+  constructor() {
+  }
+  $onInit() {
     this.parentCtrl.parentCtrl.accountOverviewService._requiredTabsList  =  this.parentCtrl.parentCtrl.requiredTabsList.filter( (tab) => { return tab != "fines" } ) 
-    /*
-    this.scope = $scope;
-    this.compile = $compile;
-    */
-
   }
 }
 
-RemoveFinesController.$inject = ['$scope', '$compile'];
+RemoveFinesController.$inject = [];
 
 export let removeFinescomponent = {
   name: 'remove-fines',  

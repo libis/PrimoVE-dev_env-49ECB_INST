@@ -1,14 +1,16 @@
 class ExternalLinksInDetailsController {
     constructor($scope) {
-        self = this
         this.$scope = $scope;
-        this.parentCtrl = this.parentCtrl.parentCtrl;
+    }
+
+    $onInit() {
+        let self = this;
+        self.parentCtrl = this.parentCtrl.parentCtrl;
         this.waitForPNX()
     }
 
-
     createExternalLinks() {
-
+        let self = this;
         // console.log( self.parentCtrl.details )
 
         let identifiers = self.parentCtrl.details.filter(function (d) {
@@ -38,17 +40,17 @@ class ExternalLinksInDetailsController {
 
 
     waitForPNX() {
-        let detailsWatcher = self.$scope.$watch(() =>
-            self.parentCtrl.details,
-            (newVal, oldVal) => {
-                if (newVal) {
-                   if (newVal[0]) {
-                        detailsWatcher();
-                        this.createExternalLinks()
-                    }
-                }
+        let self = this;
+
+        let detailsWatcher =  self.$scope.$watch(() => {
+            return ((typeof self.parentCtrl.details != "undefined") );
+        }, (n, o) => {
+            if (n == true) {
+                detailsWatcher();
+                this.createExternalLinks()
             }
-        );
+        });
+
     }
 
 }
