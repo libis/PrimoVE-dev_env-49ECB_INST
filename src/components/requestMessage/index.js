@@ -8,22 +8,22 @@ class RequestMessageController {
 
     $onInit() {
        
-        this.form = angular.element(this.element.parentElement.parentElement.parentElement.parentElement).find('prm-request')[0];
+        this.form = angular.element(this.$element.parentElement.parentElement.parentElement.parentElement).find('prm-request')[0];
         
         //params with default values:
         let params = { "feesUrl": "https:\/\/slsp.ch\/fees", "feesLinkText": '', "feesInfo": "" };
     }
 
     get feesInfo() {
-        return this.translate.instant('customize.fullview.feesInfo');
+        return this.$translate.instant('customize.fullview.feesInfo');
     }
 
     get feesUrl() {
-        return this.translate.instant('customize.fullview.feesUrl');
+        return this.$translate.instant('customize.fullview.feesUrl');
     }
 
     get feesLinkText() {
-        return this.translate.instant('customize.fullview.feesLinkText');
+        return this.$translate.instant('customize.fullview.feesLinkText');
     }
 
     //function for cloning info block into form
