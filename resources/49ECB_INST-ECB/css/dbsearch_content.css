@@ -1,0 +1,7 @@
+
+
+@media (min-width: 1280px) {
+    prm-databases > prm-search md-content > div.flex-lg-50 {
+        max-width: 70%;
+    }   
+}
